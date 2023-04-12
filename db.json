@@ -1,0 +1,77 @@
+{
+  "users": [],
+  "posts": [
+    {
+      "id": 1,
+      "name": "Test Indemnity",
+      "category": "COMEDY",
+      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+      "date": "1994",
+      "liked": true
+    },
+    {
+      "id": 2,
+      "name": "Double Test",
+      "category": "COMEDY",
+      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+      "date": "1994",
+      "liked": true
+    },
+    {
+      "id": 3,
+      "name": "Double Change",
+      "category": "COMEDY",
+      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+      "date": "1994",
+      "liked": true
+    },
+    {
+      "id": 4,
+      "name": "Change Indemnity",
+      "category": "COMEDY",
+      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+      "date": "1994",
+      "liked": true
+    },
+    {
+      "id": 5,
+      "name": "Detect Indemnity",
+      "category": "COMEDY",
+      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+      "date": "1994",
+      "liked": true
+    },
+    {
+      "id": 9,
+      "name": "Double Detect",
+      "category": "COMEDY",
+      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+      "date": "1994",
+      "liked": true
+    },
+    {
+      "id": 6,
+      "name": "Page Indemnity",
+      "category": "COMEDY",
+      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+      "date": "1994",
+      "liked": true
+    },
+    {
+      "id": 7,
+      "name": "Double Page",
+      "category": "COMEDY",
+      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+      "date": "1994",
+      "liked": false
+    },
+    {
+      "id": 8,
+      "name": "Indemnity Indemnity",
+      "category": "THRILLER",
+      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+      "date": "1994",
+      "liked": false
+    }
+  ]
+}

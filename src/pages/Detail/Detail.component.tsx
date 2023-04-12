@@ -1,10 +1,12 @@
 import { Button } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
+import { useGetPostQuery } from "store/api/postsApi";
 
 const Detail = () => {
-  const params = useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
-  console.log(params);
+
+  const { data: post } = useGetPostQuery({ id: +id! });
 
   const handleClick = () => {
     navigate("/");
@@ -15,8 +17,8 @@ const Detail = () => {
       <section>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col">
-            <span>Title: Double Indemnity</span>
-            <span>Release year: 1944</span>
+            <span>Title: {post?.name}</span>
+            <span>Release {post?.date}</span>
           </div>
           <Button variant="contained" type="button" onClick={handleClick}>
             Go Back

@@ -1,19 +1,34 @@
 import { Button, Input } from "@mui/material";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useLoginMutation } from "store/api/authApi";
+import { IAuthState, userLogin } from "store/slice/userSlice";
 
 const Login = () => {
+  const [user, setUser] = useState<IAuthState>();
+
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
+
+  const [loginMutation, { data, isSuccess, isError }] = useLoginMutation();
+  const dispatch = useDispatch();
 
   const handleRegisterClick = () => {
     navigate("/auth/register");
   };
 
   const onSubmit = (body: any) => {
-    console.log(body);
-    navigate("/");
+    loginMutation(body);
+    setUser(body);
   };
+
+  if (isSuccess && data?.accessToken) {
+    localStorage.setItem("token", data?.accessToken);
+    dispatch(userLogin(user));
+    navigate("/");
+  }
 
   return (
     <section>
@@ -44,6 +59,11 @@ const Login = () => {
             {...register("password")}
           />
         </div>
+        {isError && (
+          <span className="text-red-600 text-center">
+            Email or Password is incorrect
+          </span>
+        )}
         <div className="flex flex-row gap-5 justify-end">
           <Button variant="outlined" type="submit">
             Login

@@ -1,19 +1,34 @@
 import { Button, Input } from "@mui/material";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useRegisterMutation } from "store/api/authApi";
+import { IAuthState, userLogin } from "store/slice/userSlice";
 
 const Register = () => {
+  const [user, setUser] = useState<IAuthState>();
+
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
+
+  const [registerMutation, { data, isSuccess }] = useRegisterMutation();
+  const dispatch = useDispatch();
 
   const handleLoginClick = () => {
     navigate("/auth/login");
   };
 
   const onSubmit = (body: any) => {
-    console.log(body);
-    navigate("/");
+    registerMutation(body);
+    setUser(body);
   };
+
+  if (isSuccess) {
+    localStorage.setItem("token", data.accessToken);
+    dispatch(userLogin(user));
+    navigate("/");
+  }
 
   return (
     <section>

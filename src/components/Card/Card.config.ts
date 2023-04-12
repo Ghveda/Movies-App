@@ -1,6 +1,6 @@
+import { IPost } from "store/api/postsApi";
+
 export interface ICard {
-  id: number;
-  name: string;
-  category: string;
-  description: string;
+  post: IPost;
+  refetchPosts: () => void;
 }

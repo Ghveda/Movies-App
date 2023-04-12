@@ -4,13 +4,11 @@ import {
   Select,
   SelectChangeEvent,
 } from "@mui/material";
-import { useState } from "react";
+import { IFilter } from "./Filter.config";
 
-const Filter = () => {
-  const [age, setAge] = useState("");
-
+const Filter = ({ setCategory, category }: IFilter) => {
   const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value);
+    setCategory(event.target.value);
   };
 
   return (
@@ -18,17 +16,14 @@ const Filter = () => {
       <h1>Choose Genre</h1>
       <FormControl sx={{ m: 1, minWidth: 120, width: 180 }}>
         <Select
-          value={age}
+          value={category || ""}
           onChange={handleChange}
           displayEmpty
           inputProps={{ "aria-label": "Without label" }}
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value={undefined}>None</MenuItem>
+          <MenuItem value="COMEDY">Comedy</MenuItem>
+          <MenuItem value="THRILLER">Thriller</MenuItem>
         </Select>
       </FormControl>
     </div>
