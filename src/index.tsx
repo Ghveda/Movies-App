@@ -1,15 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import Router from "Router";
+import { BrowserRouter } from "react-router-dom";
+import Layout from "components/Layout";
+// import DeleteModal from "components/DeleteModal/DeleteModal.component";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Layout />
+      {/* <DeleteModal /> */}
+      <Router />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
