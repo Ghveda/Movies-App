@@ -20,7 +20,7 @@ const DeleteModal = () => {
   if (!showModal) return null;
 
   return createPortal(
-    <div className="bg-black/70 absolute top-0 left-0 w-full h-full flex justify-center items-center">
+    <div className="bg-black/70 fixed top-0 left-0 w-full h-full flex justify-center items-center">
       <div className="w-[600px] bg-white flex flex-col gap-5 p-6">
         <div className="flex flex-row justify-between">
           <h1>Delete Movie?</h1>

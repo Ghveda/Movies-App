@@ -9,32 +9,29 @@ const CinemaList = ({ category }: ICinemaList) => {
   const { pathname } = useLocation();
 
   const [page, setPage] = useState(1);
-  const { data: posts, refetch } = useGetPostsQuery({
+  const { data: posts } = useGetPostsQuery({
     _limit: 4,
     _page: page,
     category,
     liked: pathname === "/favorites" ? true : undefined,
   });
 
-  const handlePageChange = (
-    event: React.ChangeEvent<unknown>,
-    page: number
-  ) => {
+  const handlePageChange = (_: React.ChangeEvent<unknown>, page: number) => {
     setPage(page);
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full mb-10">
       <div className="flex flex-wrap gap-5">
-        {posts?.map((cinema) => (
-          <Card post={cinema} key={cinema.id} refetchPosts={() => refetch()} />
+        {posts?.posts?.map((cinema) => (
+          <Card post={cinema} key={cinema.id} />
         ))}
       </div>
       <div className="flex justify-center mt-5">
         <Stack spacing={2}>
           <Pagination
             onChange={handlePageChange}
-            count={3}
+            count={Math.ceil(+posts?.totalPosts! / 4)}
             color="primary"
             variant="outlined"
             shape="rounded"

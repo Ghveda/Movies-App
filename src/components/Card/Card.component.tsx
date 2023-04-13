@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { showModal } from "store/slice/modalSlice";
 import { useUpdatePostMutation } from "store/api/postsApi";
 
-const Card = ({ post, refetchPosts }: ICard) => {
+const Card = ({ post }: ICard) => {
   const [updatePost] = useUpdatePostMutation();
 
   const navigate = useNavigate();
@@ -17,12 +17,10 @@ const Card = ({ post, refetchPosts }: ICard) => {
 
   const handleDeleteClick = () => {
     dispatch(showModal({ id: post.id }));
-    refetchPosts();
   };
 
   const handleLikeClick = () => {
     updatePost({ ...post, liked: post.liked ? false : true });
-    refetchPosts();
   };
 
   return (

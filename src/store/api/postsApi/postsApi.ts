@@ -1,32 +1,28 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
-export interface IPost {
-  id: number;
-  category: string;
-  date: string;
-  description: string;
-  name: string;
-  liked: boolean;
-}
-
-export interface IPostParams {
-  _page: number;
-  _limit?: number;
-  category?: string;
-  liked?: boolean;
-}
+import { IPost, IPostParams } from "./postsApi.config";
 
 export const postsApi = createApi({
   reducerPath: "postsApi",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3005" }),
   tagTypes: ["posts"],
   endpoints: (build) => ({
-    getPosts: build.query<IPost[], IPostParams>({
+    getPosts: build.query<{ totalPosts: string; posts: IPost[] }, IPostParams>({
       query: (params) => ({
         url: `posts`,
         params,
         method: "GET",
       }),
+      transformResponse: (baseRes, meta) => {
+        const totalPosts = meta?.response?.headers.get(
+          "X-Total-Count"
+        ) as string;
+
+        return {
+          totalPosts: totalPosts ?? "0",
+          posts: baseRes as IPost[],
+        };
+      },
+      providesTags: [{ type: "posts", id: "fetchPosts" }],
     }),
     getPost: build.query<IPost, { id: number }>({
       query: (params) => ({
@@ -40,12 +36,14 @@ export const postsApi = createApi({
         body: params,
         method: "PUT",
       }),
+      invalidatesTags: [{ type: "posts", id: "fetchPosts" }],
     }),
     deletePost: build.mutation<void, { id: number }>({
       query: (params) => ({
         url: `posts/${params.id}`,
         method: "DELETE",
       }),
+      invalidatesTags: [{ type: "posts", id: "fetchPosts" }],
     }),
   }),
 });

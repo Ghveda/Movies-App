@@ -9,80 +9,74 @@
       "email": "system.admin@sweeft.com",
       "password": "$2a$10$kXQv3C1KSpkJEOBWqLVd/.MALLO3w0ZcY6BLrQ61gTKPDXigHXlm6",
       "id": 2
+    },
+    {
+      "email": "Ghvedashvili97@gmail.com",
+      "password": "$2a$10$O.Nfr7Quw470uaRBYMD8G.075p5PfjV2Ht0y9ujaSky14aAxheM0a",
+      "id": 3
+    },
+    {
+      "email": "Ghvedashvili1997@gmail.com",
+      "password": "$2a$10$CiD26YRw5vYvNcdmrePRgOWsk9kJaxwI3JlL8zxPFUankOa802DgG",
+      "id": 4
     }
   ],
   "posts": [
     {
-      "id": 1,
-      "name": "Test Indemnity",
-      "category": "COMEDY",
-      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-      "date": "1994",
-      "liked": true
-    },
-    {
-      "id": 2,
-      "name": "Double Test",
-      "category": "COMEDY",
-      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-      "date": "1994",
-      "liked": true
-    },
-    {
       "id": 3,
-      "name": "Double Change",
+      "name": "Double Indemnity",
       "category": "COMEDY",
-      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-      "date": "1994",
-      "liked": true
-    },
-    {
-      "id": 4,
-      "name": "Change Indemnity",
-      "category": "COMEDY",
-      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-      "date": "1994",
-      "liked": true
+      "description": "Georgia is a transcontinental country at the intersection of Eastern Europe and Western Asia. It is part of the Caucasus region, bounded by the Black Sea to the west, ",
+      "liked": true,
+      "date": "2014"
     },
     {
       "id": 5,
-      "name": "Detect Indemnity",
+      "name": "Double Indemnity",
       "category": "COMEDY",
-      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-      "date": "1994",
-      "liked": true
-    },
-    {
-      "id": 9,
-      "name": "Double Detect",
-      "category": "COMEDY",
-      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-      "date": "1994",
-      "liked": true
+      "description": "Georgia is a transcontinental country at the intersection of Eastern Europe and Western Asia. It is part of the Caucasus region, bounded by the Black Sea to the west, ",
+      "liked": true,
+      "date": "2014"
     },
     {
       "id": 6,
-      "name": "Page Indemnity",
-      "category": "COMEDY",
-      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-      "date": "1994",
-      "liked": true
+      "name": "Double Indemnity",
+      "category": "THRILLER",
+      "description": "Georgia is a transcontinental country at the intersection of Eastern Europe and Western Asia. It is part of the Caucasus region, bounded by the Black Sea to the west",
+      "liked": true,
+      "date": "2014"
     },
     {
       "id": 7,
-      "name": "Double Page",
+      "name": "Double Indemnity",
       "category": "COMEDY",
-      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-      "date": "1994",
-      "liked": false
+      "description": "Georgia is a transcontinental country at the intersection of Eastern Europe and Western Asia. It is part of the Caucasus region, bounded by the Black Sea to the west, ",
+      "liked": false,
+      "date": "2014"
     },
     {
       "id": 8,
-      "name": "Indemnity Indemnity",
+      "name": "Double Indemnity",
       "category": "THRILLER",
-      "description": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-      "date": "1994",
-      "liked": false
+      "description": "Georgia is a transcontinental country at the intersection of Eastern Europe and Western Asia. It is part of the Caucasus region, bounded by the Black Sea to the west",
+      "liked": false,
+      "date": "2014"
+    },
+    {
+      "id": 10,
+      "name": "Double Indemnity",
+      "category": "THRILLER",
+      "description": "Georgia is a transcontinental country at the intersection of Eastern Europe and Western Asia. It is part of the Caucasus region, bounded by the Black Sea to the west",
+      "liked": false,
+      "date": "2014"
+    },
+    {
+      "id": 11,
+      "name": "Double Indemnity",
+      "category": "COMEDY",
+      "description": "Georgia is a transcontinental country at the intersection of Eastern Europe and Western Asia. It is part of the Caucasus region, bounded by the Black Sea to the west, ",
+      "liked": false,
+      "date": "2014"
     }
   ]
 }

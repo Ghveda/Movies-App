@@ -1,6 +1,5 @@
-import { IPost } from "store/api/postsApi";
+import { IPost } from "store/api/postsApi/postsApi.config";
 
 export interface ICard {
   post: IPost;
-  refetchPosts: () => void;
 }

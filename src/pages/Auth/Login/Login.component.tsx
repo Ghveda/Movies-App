@@ -4,13 +4,14 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation } from "store/api/authApi";
-import { IAuthState, userLogin } from "store/slice/userSlice";
+import { userLogin } from "store/slice/userSlice";
+import { ILogin } from "./Login.config";
 
 const Login = () => {
-  const [user, setUser] = useState<IAuthState>();
+  const [user, setUser] = useState<ILogin>();
 
   const navigate = useNavigate();
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<ILogin>();
 
   const [loginMutation, { data, isSuccess, isError }] = useLoginMutation();
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const Login = () => {
     navigate("/auth/register");
   };
 
-  const onSubmit = (body: any) => {
+  const onSubmit = (body: ILogin) => {
     setUser(body);
     loginMutation(body);
   };

@@ -1,10 +1,14 @@
 import { Button } from "@mui/material";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { userLogout } from "store/slice/userSlice";
+import { StoreState } from "store/store";
 
 const Layout = () => {
   const dispatch = useDispatch();
+  const { isLoggedIn } = useSelector((state: StoreState) => state.userAuth);
+
+  if (!isLoggedIn) return null;
 
   return (
     <nav className="w-full flex flex-row justify-center items-center p-8">
