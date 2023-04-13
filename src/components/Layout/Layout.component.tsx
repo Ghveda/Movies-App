@@ -1,9 +1,14 @@
+import { Button } from "@mui/material";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { userLogout } from "store/slice/userSlice";
 
 const Layout = () => {
+  const dispatch = useDispatch();
+
   return (
     <nav className="w-full flex flex-row justify-center items-center p-8">
-      <ul className="flex flex-row gap-10">
+      <ul className="flex flex-row gap-10 items-center">
         <li>
           <NavLink
             to="/"
@@ -24,7 +29,9 @@ const Layout = () => {
             Favorites
           </NavLink>
         </li>
-        <li className="text-gray-400">Sign Out</li>
+        <li className="text-gray-400">
+          <Button onClick={() => dispatch(userLogout())}>Sign Out</Button>
+        </li>
       </ul>
     </nav>
   );

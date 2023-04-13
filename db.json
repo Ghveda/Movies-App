@@ -1,5 +1,16 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "ghvedashvili1997@gmail.com",
+      "password": "$2a$10$mAK8EhTzPKJkTxHlXVnulescW3kNd1eTF6UOkWGOvPcRlJhSfi1b.",
+      "id": 1
+    },
+    {
+      "email": "system.admin@sweeft.com",
+      "password": "$2a$10$kXQv3C1KSpkJEOBWqLVd/.MALLO3w0ZcY6BLrQ61gTKPDXigHXlm6",
+      "id": 2
+    }
+  ],
   "posts": [
     {
       "id": 1,

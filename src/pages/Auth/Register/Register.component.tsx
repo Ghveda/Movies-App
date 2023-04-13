@@ -1,5 +1,5 @@
 import { Button, Input } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -20,15 +20,17 @@ const Register = () => {
   };
 
   const onSubmit = (body: any) => {
-    registerMutation(body);
     setUser(body);
+    registerMutation(body);
   };
 
-  if (isSuccess) {
-    localStorage.setItem("token", data.accessToken);
-    dispatch(userLogin(user));
-    navigate("/");
-  }
+  useEffect(() => {
+    if (isSuccess && data?.accessToken) {
+      localStorage.setItem("token", data?.accessToken);
+      dispatch(userLogin(user));
+      navigate("/");
+    }
+  }, [dispatch, navigate, data?.accessToken, isSuccess, user]);
 
   return (
     <section>

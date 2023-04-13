@@ -2,19 +2,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export interface IAuthState {
   isLoggedIn: boolean;
-  accessToken: string;
   user: {
+    accessToken: string;
     email: string;
-    id: number;
+    id: number | undefined;
   };
 }
 
 const initialState: IAuthState = {
   isLoggedIn: false,
-  accessToken: "",
   user: {
+    accessToken: "",
     email: "",
-    id: 1,
+    id: undefined,
   },
 };
 
@@ -23,11 +23,18 @@ export const userAuth = createSlice({
   initialState,
   reducers: {
     userLogin: (state, actions) => {
-      state = actions.payload;
       state.isLoggedIn = true;
+      state.user = actions.payload;
     },
     userLogout: (state) => {
+      localStorage.removeItem("token");
+
       state.isLoggedIn = false;
+      state.user = {
+        id: undefined,
+        email: "",
+        accessToken: "",
+      };
     },
   },
 });
