@@ -31,7 +31,7 @@ const CinemaList = ({ category }: ICinemaList) => {
         <Stack spacing={2}>
           <Pagination
             onChange={handlePageChange}
-            count={Math.ceil(+posts?.totalPosts! / 4)}
+            count={Math.ceil(+posts?.totalPosts! / 4) || 1}
             color="primary"
             variant="outlined"
             shape="rounded"

@@ -19,6 +19,11 @@
       "email": "Ghvedashvili1997@gmail.com",
       "password": "$2a$10$CiD26YRw5vYvNcdmrePRgOWsk9kJaxwI3JlL8zxPFUankOa802DgG",
       "id": 4
+    },
+    {
+      "email": "Ghvedashvili199ss7@gmail.com",
+      "password": "$2a$10$EEU1SC.9MHOamaubHCzJ3.czBmqZnuBSXYVg6xS5Wld8.QvDHzCFq",
+      "id": 5
     }
   ],
   "posts": [
@@ -27,7 +32,7 @@
       "name": "Double Indemnity",
       "category": "COMEDY",
       "description": "Georgia is a transcontinental country at the intersection of Eastern Europe and Western Asia. It is part of the Caucasus region, bounded by the Black Sea to the west, ",
-      "liked": true,
+      "liked": false,
       "date": "2014"
     },
     {
